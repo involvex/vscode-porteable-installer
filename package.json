@@ -20,7 +20,7 @@
     "vscode-porteable-installer": "./installer.ps1"
   },
   "scripts": {
-    "install": "powershell -F installer.ps1"
+    "run-install": "powershell -F installer.ps1"
   },
   "devDependencies": {},
   "peerDependencies": {},
