@@ -1,0 +1,33 @@
+{
+  "name": "@involvex/vscode-porteable-installer",
+  "description": "A quick way to download latest vscode porteable version and extract it on windows with powershell and 7zip",
+  "module": "installer.ps1",
+  "type": "module",
+  "repository": {
+    "url": "https://github.com/involvex/vscode-porteable-installer.git",
+    "type": "git"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/involvex"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/involvex"
+  },
+  "license": "MIT",
+  "author": "involvex",
+  "bin": {
+    "vscode-porteable-installer": "./installer.ps1"
+  },
+  "scripts": {
+    "install": "powershell -F installer.ps1"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "files": [
+    "./installer.ps1",
+    "./Readme.md",
+    "./LICENSE",
+    ".github/FUNDING.yml"
+  ]
+}
