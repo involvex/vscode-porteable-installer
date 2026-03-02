@@ -1,10 +1,11 @@
 Write-Host "Creating portable version of Visual Studio Code..."
 Write-Host "Creating vscode-porteable directory and downloading the latest stable version of Visual Studio Code for Windows 64-bit as a zip archive..."
 mkdir vscode-porteable
-curl -o vscode-porteable/vscode-porteable.zip 'https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive'
-
-Write-Host "Moving to vscode-porteable directory and extracting the downloaded zip archive..."
 Set-Location vscode-porteable
+curl -o vscode-porteable.zip 'https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive'
+
+Write-Host "Extracting the downloaded zip archive..."
+
 7z x -y  vscode-porteable.zip
 
 Write-Host "Extracted the zip archive to $PWD."
