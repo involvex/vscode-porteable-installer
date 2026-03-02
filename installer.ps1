@@ -3,7 +3,7 @@ Write-Host "Creating vscode-porteable directory and downloading the latest stabl
 mkdir vscode-porteable
 Set-Location vscode-porteable
 try {
-    curl -o vscode-porteable.zip 'https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive'
+    Invoke-WebRequest -Uri 'https://update.code.visualstudio.com/latest/win32-x64-archive/stable' -OutFile 'vscode-porteable.zip'
 }
 catch {
     <#Write-Error "An error occurred while trying to download the zip archive: $_"#>
