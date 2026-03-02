@@ -2,8 +2,12 @@ Write-Host "Creating portable version of Visual Studio Code..."
 Write-Host "Creating vscode-porteable directory and downloading the latest stable version of Visual Studio Code for Windows 64-bit as a zip archive..."
 mkdir vscode-porteable
 Set-Location vscode-porteable
-curl -o vscode-porteable.zip 'https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive'
-
+try {
+    curl -o vscode-porteable.zip 'https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive'
+}
+catch {
+    <#Write-Error "An error occurred while trying to download the zip archive: $_"#>
+}
 Write-Host "Extracting the downloaded zip archive..."
 
 7z x -y  vscode-porteable.zip
@@ -17,7 +21,6 @@ if ($deleteZip -eq 'y') {
     Remove-Item vscode-porteable.zip
     }
     catch {
-        <#Do this if a terminating exception happens#>
         Write-Error "An error occurred while trying to delete the zip archive: $_"
     }
 }
